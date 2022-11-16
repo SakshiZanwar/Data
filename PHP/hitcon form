@@ -1,0 +1,28 @@
+<div class="enquiry-form">
+  <ul>
+    <li><P><label class="">Name*</label>[text* your-name class:onlycharallow maxlength:100 autocomplete:off]</P></li>
+    <li><P><label class="">Email*</label>[email* your-email maxlength:100 autocomplete:off]</P></li>
+    <li><P><label class="">Contact*</label>[tel* your-mobile class:onlynumallow minlength:8 maxlength:15 autocomplete:off]</P></li>    
+    <li class="width50">
+    [select* products_names id:test class:form-select class:chosen-select "Designing & Branding" "Digital Marketing Consultancy" "Global Business Consultation" "Political Consultancy" "Real Estate Consultancy" "Other Services"]
+     [textarea productsall class:products-textarea placeholder "Products Print"]
+
+</li>
+    <li class="full-width"><P><label class="">Message</label>[textarea your-message class:contact-textarea x3 maxlength:250 autocomplete:off]</P></li>
+    <li class="submit-btn-wrap fullwidth">[submit id:formSubmit class:contactsbmt-btn "Submit" ]</li>
+  </ul>
+</div>
+
+// form validation
+add_filter( 'wpcf7_validate_text', 'custom_name_validation_filter', 20, 2 );
+add_filter( 'wpcf7_validate_text*', 'custom_name_validation_filter', 20, 2 );
+function custom_name_validation_filter( $result, $tag ) {     
+  if ( "your-name" == $tag->name ) {
+    $name = isset( $_POST[$tag->name] ) ? $_POST[$tag->name]  : '';
+ 
+    if ( $name != "" && !preg_match("/^[a-zA-Z ]*$/",$name) ) {
+      $result->invalidate( $tag, "The name entered is invalid." );
+    }
+  }  
+  return $result; 
+}

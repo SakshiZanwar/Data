@@ -1,0 +1,60 @@
+Name: 
+Roll No.: 
+
+						     BRIEF ON MY INTERNSHIP TASK
+						     
+1. Implemented Web Pages to plot graphs:
+
+I was given two large CSV files. One contains all IPL matches played and its deatils and other contains every delivery bowled in all matches with its detail. I have used import-export utility to insert these entries in the database models I wrote in Django.
+
+I plotted 3 graphs using these data :
+	1. Bar chart for Matches played per year
+	2. Stack Bar Chart for Matches won by each team every year.
+	3. Bar Chart for Extra runs conceded by each team in a given year.
+
+I have written an API to extract data from database using django object relational model and convert it into json data so that it can be read by React axios utility which reads url with the given api methods and headers.
+
+I have plotted graphs using Reactjs. I have designed a button for getting year by user to plot Extra runs conceded by each team for that year.
+
+
+2. Implemented a Duty time feature.
+
+Video Analytics and Surveillance Toolkit (VAST) is the major project on which I designed utilities, this project enables creating custom AI bots to monitor, analyze and flag alerts on the video feeds coming from various contextual environments. So, there are security guards to attend alerts if AI bot catches any disturbance in defined checkpoints. 
+
+I implemented duty time feature in website which helps them to define duty time of security guards.
+
+I have added start and end datetime column in react which takes the datetimes and set it in the django model database and then display it on profile.
+
+
+3. Implemented Download notification feature.
+
+Clients related with the company required all statistics of camera and its active time, creator, status, checkpoint name etc in CSV.
+Checkpoint is the area covered by camera plotted by developer.
+
+I added a download notification button in event history page of dashboard using reactjs which on click take time, camera, org name etc filters and send it to backend and there created an API to take those filters to extract data from database.
+
+Extracted data is converted to json format and generated streamingHttpResponse which is further fetched in frontend and returned as downloading data.
+A StreamingHttpResponse is a response whose body is sent to the client in multiple pieces or chunks.
+
+
+4. Quality Assurance and monitoring 
+
+I monitored for diffrent checkpoints of different clients as well as checked for false alerts. I was asked to monitor the false alerts that is if someone entered in restricted checkpoints Zone.
+I was also asked to report any video creation issue (that is camera is not creating video properly) to the team.
+
+
+5. Code Cleanup and removed Frontend warnings
+
+Did code cleanup in which I removed comments,unusable and repeatable code .Removed frontend warnings due to following reasons-
+1.Each Child in a list should have a unique "key" prop.
+2.Cannot update during an existing state transition.
+3.Found three elements with non-unique id inputstate etc.
+Corrected Syntax error and logical error.
+ 
+
+
+
+
+
+	  	
+		     
